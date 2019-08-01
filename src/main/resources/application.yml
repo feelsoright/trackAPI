@@ -1,0 +1,26 @@
+server:
+  port: 9090
+spring:
+  datasource:
+    primary:
+      url: jdbc:mysql://192.168.0.200:3306/rfidTrack?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: root
+    secondary:
+      url: jdbc:mysql://192.168.0.200:3306/rfidTrack8?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: root
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: update
+        naming:
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    generate-ddl: true
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+jwt:
+  config:
+    key: feelsoright
+    ttl: 3600000
